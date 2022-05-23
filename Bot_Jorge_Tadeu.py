@@ -29,10 +29,10 @@ import os
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
-SAMPLE_SPREADSHEET_ID = '1cvajBk4yoHjVEwPrbv4rs3tdp_sZF98Pcz6I2EGYW4w'
+SAMPLE_SPREADSHEET_ID = 'SEU ID'
 SAMPLE_RANGE_NAME = 'Chat Bot!A1:D8'
 
-CHAVE_API = "5306350223:AAHMiPG15iBheGYTlqiBtV9wCbtJNqBJlGA"
+CHAVE_API = "SUA CHAVE API"
 bot = telebot.TeleBot(CHAVE_API)
 
 erros = []
@@ -47,12 +47,12 @@ pyautogui.hotkey('win','up')
 def teste_elem(elemento, indice):
     if indice == 1:
         try:
-            navegador.find_element_by_xpath(elemento).send_keys('Leonardo')
+            navegador.find_element_by_xpath(elemento).send_keys('NOME')
         except:
             erros.append(indice)
     elif indice == 2:
         try:
-            navegador.find_element_by_xpath(elemento).send_keys('03699970183')
+            navegador.find_element_by_xpath(elemento).send_keys('CPF')
         except:
             erros.append(indice)
     else:  
@@ -97,7 +97,7 @@ def chatbot():
         
 #adicionar na planilha
         valores_adicionar = [list_err_chatbot]
-        result = sheet.values().update(spreadsheetId='1cvajBk4yoHjVEwPrbv4rs3tdp_sZF98Pcz6I2EGYW4w',
+        result = sheet.values().update(spreadsheetId='DADOSID',
                                     range=f'Chat Bot!C{indice}', valueInputOption="USER_ENTERED",
                                         body={"values": valores_adicionar}).execute()
     
@@ -133,7 +133,7 @@ def func_email() :
     email = outlook.CreateItem(0)
 
     # configurar as informações do seu e-mail
-    email.To = "fabio.dasilva@inss.gov.br;breno.duarte@inss.gov.br"
+    email.To = "EMAIL"
     email.Subject = "Erros"
     email.HTMLBody = f"""
     <p>Olá eu sou o Jorge Tadeu</p>
